@@ -40,8 +40,8 @@ For this application I will be using NewsAPI. It's a well rounded API that provi
 ## Wireframes
 
 - [Mobile](https://drive.google.com/file/d/1aCa4Q1g4wJOdJS4ZMfsVNpUIWYnU_UFn/view?usp=sharing)
--[Tablet](https://drive.google.com/file/d/18ehVQiD_yDcOLAlnW7iqoEYpvAFw1onr/view?usp=sharing)
--[Desktop](https://drive.google.com/file/d/1UFILPRchjYQQBOto0EeyOTv6cJ31U1Ly/view?usp=sharing)
+- [Tablet](https://drive.google.com/file/d/18ehVQiD_yDcOLAlnW7iqoEYpvAFw1onr/view?usp=sharing)
+- [Desktop](https://drive.google.com/file/d/1UFILPRchjYQQBOto0EeyOTv6cJ31U1Ly/view?usp=sharing)
 - [React Architecture](https://drive.google.com/file/d/1TijUrvVf28fiuKZJW7ahVHQAzMXO4W9g/view?usp=sharing)
 
 
