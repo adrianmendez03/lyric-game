@@ -52,7 +52,13 @@ const Home = () => {
                     >
                         {articles[0].title}
                     </a>
-                    <img src={articles[0].urlToImage} alt={articles[0].title}/>
+                    <a
+                        target="_blank" 
+                        rel="noreferrer" 
+                        href={articles[0].url} 
+                    >
+                        <img src={articles[0].urlToImage} alt={articles[0].title}/>
+                    </a>
                     <a 
                         target="_blank" 
                         rel="noreferrer" 

@@ -8,26 +8,28 @@ img {
 }
 
 .home {
-  padding: 20px;
+  padding: 10px 0;
   text-align: center;
-}
-
-.home .headline {
-  width: 300px;
+  max-width: 350px;
   margin: auto;
 }
 
-.home .title {
+.home .headline {
+  width: 310px;
+  margin: 0 auto 10px auto;
+}
+
+.home .headline .title {
   font-size: 16px;
   font-weight: bold;
 }
 
 .home .headline img {
-  width: 275px;
+  width: 310px;
   margin: 10px 0;
 }
 
-.home .description {
+.home .headline .description {
   font-size: 14px;
 }
 
@@ -39,36 +41,36 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 5px;
   padding: 5px;
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .article .title {
-  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 6px;
 }
 
 .article .body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 10px;
 }
 
 .article .body .image {
-  width: 140px;
-  height: 125px;
-  margin: auto;
+  width: 130px;
+  height: 130px;
   border-radius: 5px;
   background-size: cover !important;
   background-position: center !important;
 }
 
 .article .body .description {
-  text-align: left;
-  width: 150px;
+  font-size: 12px;
+  width: 170px;
+  padding: 0 10px;
 }
 /*# sourceMappingURL=pages.css.map */
