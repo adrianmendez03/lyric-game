@@ -3,12 +3,16 @@ a {
     text-decoration: none;
 }
 
+img {
+    border-radius: 5px;
+}
+
 .home {
     padding: 20px;
+    text-align: center;
     .headline {
-        width: 275px;
+        width: 300px;
         margin: auto;
-        text-align: center;
     }
     
     .title {
@@ -19,10 +23,36 @@ a {
     .headline img {
         width: 275px;
         margin: 10px 0;
-        border-radius: 5px;
     }
     
     .description {
         font-size: 14px;
+    }
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    .title {
+        margin-bottom: 5px;
+    }
+    .body {
+        display: flex;
+        flex-direction: row;
+        .image {
+            width: 140px;
+            height: 125px;
+            margin: auto;
+            border-radius: 5px;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+        .description {
+            text-align: left;
+            width: 150px;
+        }
     }
 }

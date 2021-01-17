@@ -1,8 +1,19 @@
 import React from 'react'
 
-const Feed = () => {
+import Article from './Article'
+
+const Feed = ({ articles }) => {
+
+    const feedArticles = articles.filter((article, index) => {
+        return index > 0 
+    }).map((article, index) => {
+        return <Article article={article} key={index} />
+    })
+
     return (
-        <div>Feed</div>
+        <div className="feed">
+            {feedArticles}
+        </div>
     )
 }
 

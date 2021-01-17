@@ -8,34 +8,35 @@ const Home = () => {
 
     const [articles, setArticles] = useState(null)
 
-    const formatTitle = (title) => {
-        for (let i = title.length - 1; i > 0; i--) {
-            if (title[i] === "-") {
-                title = title.slice(0, i - 1)
-                break
+
+
+    useEffect(() => {
+        const formatTitle = (title) => {
+            for (let i = title.length - 1; i > 0; i--) {
+                if (title[i] === "-") {
+                    title = title.slice(0, i - 1)
+                    break
+                }
             }
+            return title
         }
-        return title
-    }
-
-    const filterArticles = (response) => {
-        for (let i = 0; i < response.length; i++) {
-            if (response[i].author === null) {
-                response.splice(i, 1)
+        const filterArticles = (response) => {
+            for (let i = 0; i < response.length; i++) {
+                if (response[i].author === null || response[i].urlToImage === null) {
+                    response.splice(i, 1)
+                }
+                response[i].title = formatTitle(response[i].title)
             }
-            response[i].title = formatTitle(response[i].title)
+            return response
         }
-        return response
-    }
-
-    const fetchHomeArticles = async () => {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${REACT_APP_API_KEY}`)
-        const data = await response.json()
-        const filteredArticles = filterArticles(data.articles)
-        setArticles([...filteredArticles])
-    }
-
-    useEffect(() => {fetchHomeArticles()}, [])
+        const fetchHomeArticles = async () => {
+            const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${REACT_APP_API_KEY}`)
+            const data = await response.json()
+            const filteredArticles = filterArticles(data.articles)
+            setArticles([...filteredArticles])
+        }
+        fetchHomeArticles()
+    }, [])
 
     const loading = () => <h2>Fetching Articles...</h2>
 
@@ -61,6 +62,7 @@ const Home = () => {
                         {articles[0].description}
                     </a>
                 </div>
+                <Feed articles={articles}/>
             </>
         )
     }
