@@ -1,10 +1,30 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+
 .home {
   padding: 20px;
 }
 
-.headline {
+.home .headline {
+  width: 275px;
+  margin: auto;
   text-align: center;
-  text-transform: uppercase;
+}
+
+.home .title {
+  font-size: 16px;
   font-weight: bold;
+}
+
+.home .headline img {
+  width: 275px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.home .description {
+  font-size: 14px;
 }
 /*# sourceMappingURL=pages.css.map */
