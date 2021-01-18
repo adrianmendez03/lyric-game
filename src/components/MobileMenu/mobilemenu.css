@@ -1,0 +1,86 @@
+.mobile-menu-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 2;
+  border-radius: 25px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.mobile-menu-icon div {
+  width: 24px;
+  margin: 2px 0;
+  border-radius: 10px;
+}
+
+.open {
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4);
+          box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4);
+}
+
+.open div {
+  border-bottom: 3px solid black;
+}
+
+.closed {
+  background-color: black;
+  -webkit-box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
+}
+
+.closed div {
+  border-bottom: 3px solid white;
+}
+
+.menu-container {
+  height: 300px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: black;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.nav-open {
+  bottom: 0;
+}
+
+.nav-closed {
+  bottom: -300px;
+}
+
+.menu {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-open {
+  opacity: 1;
+}
+/*# sourceMappingURL=mobilemenu.css.map */

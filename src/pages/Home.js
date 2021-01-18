@@ -22,7 +22,7 @@ const Home = () => {
         }
         const filterArticles = (response) => {
             for (let i = 0; i < response.length; i++) {
-                if (response[i].author === null ||response[i].image === null) {
+                if (response[i].author === null ||response[i].urlToImage === null) {
                     response.splice(i, 1)
                 }
                 response[i].title = formatTitle(response[i].title)
@@ -33,6 +33,7 @@ const Home = () => {
             const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${REACT_APP_API_KEY}`)
             const data = await response.json()
             const filteredArticles = filterArticles(data.articles)
+            console.log(filteredArticles)
             setArticles([...filteredArticles])
         }
         fetchHomeArticles()
@@ -47,7 +48,7 @@ const Home = () => {
                     <a 
                         target="_blank" 
                         rel="noreferrer" 
-                        href={articles[0].urlToImage} 
+                        href={articles[0].url} 
                         className="title"
                     >
                         {articles[0].title}
@@ -57,7 +58,7 @@ const Home = () => {
                         rel="noreferrer" 
                         href={articles[0].url} 
                     >
-                        <img src={articles[0].image} alt={articles[0].title}/>
+                        <img src={articles[0].urlToImage} alt={articles[0].title}/>
                     </a>
                     <a 
                         target="_blank" 
