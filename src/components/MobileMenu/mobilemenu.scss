@@ -11,6 +11,7 @@
     z-index: 2;
     border-radius: 25px;
     transition: all 0.3s;
+    cursor: pointer;
     div {
         width: 24px;
         margin: 2px 0;
@@ -39,6 +40,7 @@
     position: fixed;
     left: 0;
     right: 0;
+    z-index: 2;
     background-color: black;
     transition: all 0.3s;
 }

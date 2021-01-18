@@ -7,19 +7,19 @@ const Menu = () => {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    const handleClick = () => {
+    const handleMenuIconClick = () => {
         isOpen ? setIsOpen(false) : setIsOpen(true)
     }
 
     const renderMenuIcon = () => {
         return isOpen ? (
-            <div className="mobile-menu-icon open" onClick={handleClick}>
+            <div className="mobile-menu-icon open" onClick={handleMenuIconClick}>
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
         ) : (
-            <div className="mobile-menu-icon closed" onClick={handleClick}>
+            <div className="mobile-menu-icon closed" onClick={handleMenuIconClick}>
                 <div></div>
                 <div></div>
                 <div></div>
@@ -29,7 +29,7 @@ const Menu = () => {
 
     const renderMenu = () => {
         return isOpen ?  (
-                <div className="menu-container nav-open">
+                <div className="menu-container nav-open" onClick={event => event.stopPropagation()}>
                     <Nav />
                 </div>
         ) : (
