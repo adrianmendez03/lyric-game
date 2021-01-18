@@ -3,7 +3,7 @@ import React from 'react'
 const Article = (props) => {
 
     const { article, odd } = props
-    const image = { background: `url(${article.urlToImage})`}
+    const image = { background: `url(${article.image})`}
     let direction
 
     if (odd) {

@@ -22,7 +22,7 @@ const Home = () => {
         }
         const filterArticles = (response) => {
             for (let i = 0; i < response.length; i++) {
-                if (response[i].author === null || response[i].urlToImage === null) {
+                if (response[i].image === null) {
                     response.splice(i, 1)
                 }
                 response[i].title = formatTitle(response[i].title)
@@ -33,8 +33,8 @@ const Home = () => {
             const response = await fetch(`http://api.mediastack.com/v1/news?access_key=${REACT_APP_API_KEY}&countries=us`)
             const data = await response.json()
             console.log(data)
-            // const filteredArticles = filterArticles(data.articles)
-            // setArticles([...filteredArticles])
+            const filteredArticles = filterArticles(data.data)
+            setArticles([...filteredArticles])
         }
         fetchHomeArticles()
     }, [])
@@ -58,7 +58,7 @@ const Home = () => {
                         rel="noreferrer" 
                         href={articles[0].url} 
                     >
-                        <img src={articles[0].urlToImage} alt={articles[0].title}/>
+                        <img src={articles[0].image} alt={articles[0].title}/>
                     </a>
                     <a 
                         target="_blank" 
