@@ -30,10 +30,11 @@ const Home = () => {
             return response
         }
         const fetchHomeArticles = async () => {
-            const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${REACT_APP_API_KEY}`)
+            const response = await fetch(`http://api.mediastack.com/v1/news?access_key=${REACT_APP_API_KEY}&countries=us`)
             const data = await response.json()
-            const filteredArticles = filterArticles(data.articles)
-            setArticles([...filteredArticles])
+            console.log(data)
+            // const filteredArticles = filterArticles(data.articles)
+            // setArticles([...filteredArticles])
         }
         fetchHomeArticles()
     }, [])
