@@ -2,15 +2,8 @@ import React from 'react'
 
 const Article = (props) => {
 
-    const { article, odd } = props
+    const { article } = props
     const image = { background: `url(${article.urlToImage})`}
-    let direction
-
-    if (odd) {
-        direction = { flexDirection: "row-reverse", textAlign: "right"}
-    } else {
-        direction = { flexDirection: "row", textAlign: "left"}
-    }
 
     return (
         <div className="article">
@@ -22,7 +15,7 @@ const Article = (props) => {
             >
                 {article.title}
             </a>
-            <div style={direction} className="body">
+            <div className="body">
                 <a 
                     style={image}
                     target="_blank" 

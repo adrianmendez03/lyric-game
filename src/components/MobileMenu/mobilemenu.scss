@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -58,7 +58,9 @@
             text-transform: uppercase;
             font-size: 14px;
             color: white;
-            box-shadow: 0 30px 35px 1px rgba(255, 255, 255, 0.1);
+        }
+        a:nth-child(1) {
+            box-shadow: 0 30px 35px 1px rgba(255, 255, 255, 0.20);
         }
     }
     .search-container {
@@ -68,7 +70,7 @@
         margin: 12px 0;
         padding-bottom: 10px;
         width: 100%;
-        box-shadow: 0 30px 35px 1px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 30px 35px 1px rgba(255, 255, 255, 0.20);
         .fa-search {
             display: flex;
             flex-direction: column;
@@ -105,10 +107,11 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.75);
     opacity: 0;
-    z-index: 1;
+    z-index: -1;
     transition: all 0.3s;
 }
 
 .menu-open {
     opacity: 1;
+    z-index: 1;
 }

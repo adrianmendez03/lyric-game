@@ -24,6 +24,7 @@ const Home = () => {
             for (let i = 0; i < response.length; i++) {
                 if (response[i].author === null ||response[i].urlToImage === null) {
                     response.splice(i, 1)
+                    continue
                 }
                 response[i].title = formatTitle(response[i].title)
             }
@@ -33,7 +34,6 @@ const Home = () => {
             const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${REACT_APP_API_KEY}`)
             const data = await response.json()
             const filteredArticles = filterArticles(data.articles)
-            console.log(filteredArticles)
             setArticles([...filteredArticles])
         }
         fetchHomeArticles()
@@ -44,6 +44,10 @@ const Home = () => {
     const loaded = () => {
         return (
             <>
+                <div className="page-title">
+                    <h2>Home</h2>
+                    <div></div>
+                </div>
                 <div className="headline">
                     <a 
                         target="_blank" 
@@ -75,7 +79,7 @@ const Home = () => {
     }
 
     return (
-        <div className="home">
+        <div className="main">
             { articles ? loaded() : loading()}
         </div>
     )

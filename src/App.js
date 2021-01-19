@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 
 import MobileMenu from './components/MobileMenu'
 import Home from './pages/Home'
+import Sources from './pages/Sources'
 import Source from './pages/Source'
 import Search from './pages/Search'
 import './pages/pages.css'
@@ -21,9 +22,13 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/source">
-          <Source />
+        <Route exact path="/sources">
+          <Sources />
         </Route>
+        <Route
+          path="/sources/:source"
+          render={(routerProps) => <Source {...routerProps}/>}
+        />
         <Route path="/search">
           <Search />
         </Route>
