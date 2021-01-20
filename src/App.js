@@ -29,9 +29,10 @@ function App() {
           path="/sources/:source"
           render={(routerProps) => <Source {...routerProps}/>}
         />
-        <Route path="/search">
-          <Search />
-        </Route>
+        <Route 
+          path="/search/:term"
+          render={(routerProps) => <Search {...routerProps}/>}
+        />
       </Switch>
     </div>
   );
