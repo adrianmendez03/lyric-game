@@ -25,7 +25,7 @@ img {
   bottom: 5px;
   width: 30px;
   margin: auto;
-  border-bottom: 5px solid #151ca3;
+  border-bottom: 5px solid #1f43e4;
   -webkit-transform: skewY(165deg);
           transform: skewY(165deg);
   z-index: -1;
@@ -145,6 +145,17 @@ img {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+}
+
+#source .navigation {
+  text-align: left;
+  font-size: 12px;
+  padding: 5px 0 0 5px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#source .navigation a {
+  color: rgba(0, 0, 0, 0.75);
 }
 
 #source .article {

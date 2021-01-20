@@ -23,7 +23,7 @@ img {
             bottom: 5px;
             width: 30px;
             margin: auto;
-            border-bottom: 5px solid #151ca3;
+            border-bottom: 5px solid #1f43e4;
             transform: skewY(165deg);
             z-index: -1;
             animation: swipe 0.3s;
@@ -110,6 +110,15 @@ img {
 
 
 #source {
+    .navigation {
+        text-align: left;
+        font-size: 12px;
+        padding: 5px 0 0 5px;
+        color: rgba(0, 0, 0, 0.75);
+        a {
+            color: rgba(0, 0, 0, 0.75);
+        }
+    }
     .article {
         display: flex;
         flex-direction: row;

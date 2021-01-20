@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import Feed from '../components/Feed'
 
@@ -15,12 +16,15 @@ const Source = props => {
             setArticles([...data.articles])
         }
         fetchSource()
-    }, [])
+    }, [props.match.params.source])
 
     const loading = () => <h2>Fetching Articles...</h2>
     const loaded = () => {
         return (
             <>
+                <div className="navigation">
+                    <Link to="/sources">sources</Link> / {props.match.params.source}
+                </div>
                 <div className="page-title">
                     <h2>{articles[0].source.name}</h2>
                     <div></div>
