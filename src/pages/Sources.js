@@ -10,7 +10,7 @@ const Sources = () => {
 
     useEffect(() => {
         const fetchSources = async () => {
-            const response = await fetch(`https://newsapi.org/v2/sources?apiKey=${REACT_APP_API_KEY}`)
+            const response = await fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/sources?apiKey=${REACT_APP_API_KEY}`)
             const data = await response.json()
             setSources([...data.sources])
         }

@@ -31,7 +31,7 @@ const Home = () => {
             return response
         }
         const fetchHomeArticles = async () => {
-            const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${REACT_APP_API_KEY}`)
+            const response = await fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${REACT_APP_API_KEY}`)
             const data = await response.json()
             const filteredArticles = filterArticles(data.articles)
             setArticles([...filteredArticles])
@@ -44,10 +44,10 @@ const Home = () => {
     const loaded = () => {
         return (
             <>
-                <div className="page-title">
+                {/* <div className="page-title">
                     <h2>Home</h2>
                     <div></div>
-                </div>
+                </div> */}
                 <div className="headline">
                     <a 
                         target="_blank" 

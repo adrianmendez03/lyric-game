@@ -20,7 +20,7 @@ const Source = props => {
             setArticles([...articlesArr])
         }
         const fetchSource = async () => {
-            const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=${props.match.params.source}&apiKey=${REACT_APP_API_KEY}`)
+            const response = await fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?sources=${props.match.params.source}&apiKey=${REACT_APP_API_KEY}`)
             const data = await response.json()
             filterArticles(data.articles)
         }
@@ -37,6 +37,23 @@ const Source = props => {
                 <div className="page-title">
                     <h2>{articles[0].source.name}</h2>
                     <div></div>
+                </div>
+                <div className="headline">
+                    <a
+                        target="_blank" 
+                        rel="noreferrer" 
+                        href={articles[0].url} 
+                    >
+                        <img src={articles[0].urlToImage} alt={articles[0].title}/>
+                    </a>
+                    <a 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        href={articles[0].url} 
+                        className="description"
+                    >
+                        {articles[0].description}
+                    </a>
                 </div>
                 <Feed articles={articles} />
             </>
