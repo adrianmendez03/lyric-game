@@ -10,10 +10,19 @@ const Source = props => {
     const [articles, setArticles] = useState(null)
 
     useEffect(() => {
+        const filterArticles = articlesArr => {
+            for (let i = 0; i < articlesArr.length; i++) {
+                if (articlesArr[i].urlToImage === "null") {
+                    articlesArr.splice(i, 1)
+                    continue
+                }
+            }
+            setArticles([...articlesArr])
+        }
         const fetchSource = async () => {
             const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=${props.match.params.source}&apiKey=${REACT_APP_API_KEY}`)
             const data = await response.json()
-            setArticles([...data.articles])
+            filterArticles(data.articles)
         }
         fetchSource()
     }, [props.match.params.source])

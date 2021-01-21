@@ -55,6 +55,10 @@ const Home = () => {
                         href={articles[0].url} 
                         className="title"
                     >
+                        <div className="source">
+                            {articles[0].source.name}
+                            <div></div>
+                        </div>
                         {articles[0].title}
                     </a>
                     <a

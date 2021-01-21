@@ -10,8 +10,7 @@ img {
 .main {
     padding: 10px 0;
     text-align: center;
-    max-width: 350px;
-    margin: 36px auto 0 auto;
+    margin: 36px 0 0 0;
     .page-title {
         h2, h4 {
             letter-spacing: 1px;
@@ -32,18 +31,24 @@ img {
         }
     }
     .headline {
-        width: 310px;
-        margin: 15px auto;
-        padding: 5px;
-        border-radius: 10px;
-        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+        margin: 15px 0;
         .title {
             font-size: 16px;
             font-weight: bold;
+            .source {
+                text-transform: uppercase;
+                font-size: 12px;
+                div {
+                    width: 50px;
+                    margin:  5px auto;
+                    border-bottom: 5px solid #1f43e4;
+                }
+            }
         }
         img {
-            width: 310px;
-            margin: 10px 0;
+            width: 100vw;;
+            margin: 5px 0;
+            border-radius: 0;
         }
         .description {
             font-size: 14px;
@@ -71,28 +76,36 @@ img {
 }
 
 .feed {
-    width: 300px;
+    max-width: 350px;
     margin: auto;
     .article {
         display: flex;
         flex-direction: column;
-        margin: 15px 0;
-        padding: 5px;
-        border-radius: 10px;
-        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+        margin: 10px 0;
+        padding: 10px 5px;
+        text-align: left;
         .title {
             font-size: 14px;
             font-weight: bold;
             margin-bottom: 6px;
+            .source {
+                text-transform: uppercase;
+                font-size: 12px;
+                div {
+                    border-bottom: 5px solid #1f43e4;
+                    width: 50px;
+                    margin: 5px auto 5px 0;
+                }
+            }
         }
         .body {
             display: flex;
-            justify-content: space-around;
-            padding: 0 10px;
+            justify-content: flex-start;
+            padding: 0;
             .image {
                 width: 130px;
                 height: 130px;
-                margin: auto;
+                margin: 0;
                 border-radius: 5px;
                 background-size: cover !important;
                 background-position: center !important;
@@ -105,6 +118,14 @@ img {
         }
     }
     .article:nth-child(odd) {
+        text-align: right;
+        .source {
+            div {
+                border-bottom: 5px solid #1f43e4;
+                width: 50px;
+                margin: 5px 0 5px auto;
+            }
+        }
         .body {
             flex-direction: row-reverse;
         }
@@ -125,17 +146,30 @@ img {
     }
     .article {
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         align-items: center;
+        margin: 20px 0;
+        padding: 10px 0;
         .title {
-            margin: 0;
+            text-align: left;
+            margin: 0 0 0 10px;
+            div {
+                margin: 5px auto 5px 0;
+            }
         }
         .description {
             display: none;
         }
     }
-    .article:nth-child(odd) {
-        flex-direction: row-reverse;
+    .article:nth-child(even) {
+        flex-direction: row;
+        .title {
+            text-align: right;
+            margin: 0 10px 0 0;
+            div {
+                margin: 5px 0 5px auto;
+            }
+        }
     }
 }
 

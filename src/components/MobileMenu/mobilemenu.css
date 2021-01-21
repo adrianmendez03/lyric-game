@@ -52,6 +52,7 @@
 
 .menu-container {
   height: 225px;
+  width: 100vw;
   position: fixed;
   left: 0;
   right: 0;

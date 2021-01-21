@@ -13,6 +13,10 @@ const Article = (props) => {
                 href={article.url} 
                 className="title"
             >
+                <div className="source">
+                    {article.source.name}
+                    <div></div>
+                </div>
                 {article.title}
             </a>
             <div className="body">
