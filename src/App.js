@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import MobileMenu from './components/MobileMenu'
+import Nav from './components/Nav'
 import Home from './pages/Home'
 import Sources from './pages/Sources'
 import Source from './pages/Source'
@@ -15,7 +16,12 @@ function App() {
   return (
     <div className="App">
       <div className="navbar">
-        <div className="logo">[News App]</div>
+        <div className="nav-inner">
+          <div className="logo">[News App]</div>
+          <div className="nav-container">
+            <Nav />
+          </div>
+        </div>
       </div>
       <MobileMenu />
       <Switch>
