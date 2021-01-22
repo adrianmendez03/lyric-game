@@ -11,12 +11,123 @@
 }
 
 .navbar .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-transform: uppercase;
   text-align: center;
+  letter-spacing: 1px;
   font-weight: bold;
+  -webkit-animation: logo-expand 1s;
+          animation: logo-expand 1s;
+}
+
+.navbar .logo .ends {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.navbar .logo .ends:nth-child(1) {
+  -webkit-animation: move-right 1s ease;
+          animation: move-right 1s ease;
+}
+
+.navbar .logo .ends:last-child {
+  -webkit-animation: move-left 1s ease;
+          animation: move-left 1s ease;
+}
+
+.navbar .logo .middle {
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 12px;
+  -webkit-animation: expand 1s ease;
+          animation: expand 1s ease;
+}
+
+.navbar .logo .middle .underline {
+  height: 3px;
+  background-color: #1f43e4;
 }
 
 .navbar .nav-container {
   display: none;
+}
+
+@-webkit-keyframes move-right {
+  0% {
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes move-right {
+  0% {
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes move-left {
+  0% {
+    -webkit-transform: translateX(-25px);
+            transform: translateX(-25px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes move-left {
+  0% {
+    -webkit-transform: translateX(-25px);
+            transform: translateX(-25px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes expand {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes expand {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -41,6 +152,9 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .nav-inner .logo .middle {
+    margin-top: 0;
   }
   .nav-inner .nav-container {
     width: 400px;

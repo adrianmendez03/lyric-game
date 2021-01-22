@@ -3,35 +3,58 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
+    padding: 10px;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 35px;
+    right: 35px;
     z-index: 2;
-    border-radius: 25px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
     transition: all 0.3s;
     cursor: pointer;
-    div {
+    div:nth-child(1) {
         width: 24px;
-        margin: 2px 0;
+        margin: 0 auto 0 0;
+    }
+    div {
+        width: 36px;
+        margin: 7px 0;
         border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    div:nth-child(3) {
+        width: 24px;
+        margin: 0 0 0 auto;
     }
 }
 
 .open {
-    background-color: white;
-    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.1);
-    div {
-        border-bottom: 3px solid black;
+    background-color: transparent;
+    box-shadow: none;
+    div:nth-child(1) {
+        width: 35px;
+        transform: translateY(11px)rotate(225deg);
     }
+    div:nth-child(2) {
+        width: 35px;
+        transform: rotate(-225deg);
+    }
+    div:nth-child(3) {
+        opacity: 0;
+        transform: rotate(225deg);
+    }
+    div {
+        border-bottom: 4px solid white;
+    }
+
 }
 
 .closed {
-    background-color: #1f43e4;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
     div {
-     border-bottom: 3px solid white;
+     border-bottom: 4px solid #1f43e4;
     }
 }
 
@@ -46,7 +69,8 @@
     justify-content: flex-end;
     align-items: center;
     z-index: 2;
-    background-color: rgb(2, 2, 2);
+    background-color: #1f43e4;
+    
     transition: all 0.3s;
     .links-container {
         display: flex;
@@ -60,9 +84,6 @@
             font-size: 14px;
             color: white;
         }
-        a:nth-child(1) {
-            box-shadow: 0 30px 35px 1px rgba(255, 255, 255, 0.20);
-        }
     }
     .search-container {
         display: flex;
@@ -71,14 +92,6 @@
         margin: 12px 0;
         padding-bottom: 10px;
         width: 100%;
-        box-shadow: 0 30px 35px 1px rgba(255, 255, 255, 0.20);
-        .fa-search {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: white;
-            margin-right: 8px;
-        }
         input {
             -webkit-appearance: none;
             border: none;

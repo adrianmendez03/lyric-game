@@ -58,20 +58,35 @@ img {
     .sources-container {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         flex-wrap: wrap;
         .source {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 120px;
             padding: 14px 8px;
-            margin: 8px 0;
-            box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+            margin: 10px 10px;
             border-radius: 10px;
             font-size: 14px;
             text-transform: uppercase;
             font-weight: bold;
+            transition: all 0.3s;
+            div {
+                width: 0;
+                height: 4px;
+                margin: 5px 0 0 0;
+                background-color: #1f43e4;
+                transition: all 0.3s;
+            }
+        }
+        .source:hover {
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+            transform: scale(1.15);
+            div {
+                width: 30px;
+            }
         }
     }
 }
@@ -150,7 +165,6 @@ img {
     .article {
         display: flex;
         flex-direction: row-reverse;
-        align-items: center;
         margin: 20px 0;
         padding: 10px 0;
         .title {
@@ -202,6 +216,15 @@ img {
                 width: 100%;
             }
         }
+        .sources-container {
+            width: 500px;
+            margin: 15px auto 0 auto;
+            .source {
+                width: 120px;
+                padding: 14px 8px;
+                margin: 10px 15px;
+            }
+        }
     }
 
     .feed {
@@ -236,6 +259,21 @@ img {
             }
         }
     }
+    #source {
+        .article {
+            margin: 10px auto;
+        }
+        .article:nth-child(even) {
+            flex-direction: row-reverse;
+            .title {
+                text-align: left;
+                margin: 0 0 0 10px;
+                div {
+                    margin: 5px auto 5px 0;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -245,6 +283,15 @@ img {
             margin: 20px auto;
             img {
                 width: 100%;
+            }
+        }
+        .sources-container {
+            width: 900px;
+            margin: 15px auto 0 auto;
+            .source {
+                width: 120px;
+                padding: 14px 8px;
+                margin: 10px 15px;
             }
         }
     }
@@ -290,9 +337,9 @@ img {
 
 @keyframes article-swipe {
     from {
-        transform: scaleX(0);
+        width: 0;
     }
     to {
-        transform: scaleX(1);
+        width: 50px;
     }
 }

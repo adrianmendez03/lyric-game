@@ -17,7 +17,14 @@ function App() {
     <div className="App">
       <div className="navbar">
         <div className="nav-inner">
-          <div className="logo">[News App]</div>
+          <div className="logo">
+            <div className="ends">[N</div>
+            <div className="middle">
+              ews Ap
+              <div className="underline"></div>
+            </div>
+            <div className="ends">P]</div>
+          </div>
           <div className="nav-container">
             <Nav />
           </div>

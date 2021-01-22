@@ -23,7 +23,7 @@ const Search = props => {
         return (
             <>
                 <div className="page-title">
-                    <h4>Searching for</h4>
+                    <h4>Results for</h4>
                     <h2>{term}</h2>
                     <div></div>
                 </div>
