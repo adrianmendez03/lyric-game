@@ -4,7 +4,7 @@
 ## Project Links
 
 - [Github Repo](https://github.com/adrianmendez03/news-app)
-- [add your deployment link]()
+- [add your deployment link](https://adrians-news-app.netlify.app/)
 
 ## Project Description
 
@@ -86,10 +86,16 @@ For this application I will be using NewsAPI. It's a well rounded API that provi
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
+When given the title of an article the API includes "- source name" at the end. I dont want the sources name attatched to the title so this function takes in the title and trims off the source at the end.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+const formatTitle = (title) => {
+    for (let i = title.length - 1; i > 0; i--) {
+        if (title[i] === "-") {
+            title = title.slice(0, i - 1)
+            break
+        }
+    }
+    return title
 }
 ```
