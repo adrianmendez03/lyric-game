@@ -20,8 +20,9 @@ const Source = props => {
             setArticles([...articlesArr])
         }
         const fetchSource = async () => {
-            const response = await fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?sources=${props.match.params.source}&apiKey=${REACT_APP_API_KEY}`)
+            const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=${props.match.params.source}&apiKey=${REACT_APP_API_KEY}`)
             const data = await response.json()
+            console.log(data)
             filterArticles(data.articles)
         }
         fetchSource()
