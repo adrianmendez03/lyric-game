@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-const { REACT_APP_API_KEY } = process.env
-
 const Sources = () => {
 
     const [sources, setSources] = useState(null)
 
     useEffect(() => {
         const fetchSources = async () => {
-            const response = await fetch(`https://newsapi.org/v2/sources?apiKey=${REACT_APP_API_KEY}`)
+            const response = await fetch(`https://adrian-news-app-api.herokuapp.com/sources`)
             const data = await response.json()
             console.log(data)
             setSources([...data.sources])

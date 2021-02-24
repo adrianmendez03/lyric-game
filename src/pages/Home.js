@@ -2,8 +2,6 @@ import React, { useState, useEffect} from 'react'
 
 import Feed from '../components/Feed'
 
-const { REACT_APP_API_KEY } = process.env
-
 const Home = () => {
 
     const [articles, setArticles] = useState(null)
@@ -33,7 +31,7 @@ const Home = () => {
         }
 
         const fetchHomeArticles = async () => {
-            const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${REACT_APP_API_KEY}`)
+            const response = await fetch(`https://adrian-news-app-api.herokuapp.com/articles`)
             const data = await response.json()
             const filteredArticles = filterArticles(data.articles)
             setArticles([...filteredArticles])
