@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Sources = () => {
 
@@ -25,7 +25,7 @@ const Sources = () => {
             //     </Link>
             // )
             return (
-                <a target="_blank" href={source.url} className="source" key={index}>
+                <a target="_blank" rel="noreferrer" href={source.url} className="source" key={index}>
                     {source.name}
                     <div></div>
                 </a>
