@@ -18,11 +18,17 @@ const Sources = () => {
 
     const renderSources = () => {
         return sources.map((source, index) => {
+            // return (
+            //     <Link to={`/sources/${source.id}`} className="source" key={index}>
+            //         {source.name}
+            //         <div></div>
+            //     </Link>
+            // )
             return (
-                <Link to={`/sources/${source.id}`} className="source" key={index}>
+                <a target="_blank" href={source.url} className="source" key={index}>
                     {source.name}
                     <div></div>
-                </Link>
+                </a>
             )
         })
     }
